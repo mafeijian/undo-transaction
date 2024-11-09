@@ -1,10 +1,10 @@
 import { SerializableObject } from "./SerializableObject";
 
 const DeclareProperty = (clazz: any, property: string) => {
-    if (!clazz.serializedFields || !Array.isArray(clazz.serializedFields)) {
-        clazz.serializedFields = [];
+    if (!clazz.serializableFields || !Array.isArray(clazz.serializableFields)) {
+        clazz.serializableFields = [];
     }
-    clazz.serializedFields.push(property);
+    clazz.serializableFields.push(property);
     Object.defineProperty(clazz, property, {
         get(this: SerializableObject) {
             return this.getProp(property);
