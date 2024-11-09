@@ -1,4 +1,4 @@
-import { TransactionHost } from "./TransactionHost";
+import { TransactionContext } from "./TransactionContext";
 
 export class SerializableObject {
     hash: any;
@@ -9,7 +9,7 @@ export class SerializableObject {
         return this.hash[property];
     }
     setProp(property: string, value: any) {
-        TransactionHost.getTransactionHost().onPropertyChanged((this as any).className, property, this.hash, this.getProp(property), value);
+        TransactionContext.getTransactionContext().onPropertyChanged((this as any).className, property, this.hash, this.getProp(property), value);
         this.hash[property] = value;
         return this.hash[property];
     }
