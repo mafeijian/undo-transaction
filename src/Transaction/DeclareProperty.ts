@@ -7,12 +7,10 @@ const DeclareProperty = (clazz: any, property: string) => {
     clazz.serializedFields.push(property);
     Object.defineProperty(clazz, property, {
         get(this: SerializableObject) {
-            console.log(`get: ${this}`);
-            this.getProp(property);
+            return this.getProp(property);
         },
         set(this: SerializableObject, v: any) {
-            console.log(`set: ${JSON.stringify(this)}=${v}`);
-            this.setProp(property, v);
+            return this.setProp(property, v);
         }
     });
 }

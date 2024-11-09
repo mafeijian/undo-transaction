@@ -5,4 +5,8 @@ export class Pair<K,V> {
         this.first = k;
         this.second = v;
     }
+
+    dump() {
+        return `{${JSON.stringify(this.first)},${JSON.stringify(this.second)}}`
+    }
 }

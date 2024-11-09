@@ -14,4 +14,9 @@ export class ArchObject extends SerializableObject {
 
     // @DeclareProperty
     endPnt: Point2d;
+
+    constructor() {
+        super();
+        this.id = '';
+    }
 }

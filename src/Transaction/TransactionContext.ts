@@ -39,6 +39,10 @@ export class TransactionContext {
     }
 
     dump() {
-        return JSON.stringify(this.undolist);
+        let caption = [];
+        this.undolist.forEach(cap => {
+            caption.push(cap.dump());
+        })
+        return `undolist:[${caption.join(',\n')}]`;
     }
 }

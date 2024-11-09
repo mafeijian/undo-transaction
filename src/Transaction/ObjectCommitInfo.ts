@@ -14,4 +14,13 @@ export class ObjectCommitInfo {
             this.hash[property] = new PropertyChangeInfo(oldValue, newValue); // create new entry
         }
     }
+
+    dump() {
+        let caption = '';
+        const keys = Object.keys(this.hash);
+        for (let i = 0; i < keys.length; ++i) {
+            caption += `property ${keys[i]} changed with ${this.hash[keys[i]].dump()}`;
+        }
+        return `{${caption}}`;
+    }
 }

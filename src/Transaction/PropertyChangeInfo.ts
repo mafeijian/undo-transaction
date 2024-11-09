@@ -5,4 +5,8 @@ export class PropertyChangeInfo {
     constructor(oldValue: any, newValue: any) {
         this.changeInfo = new Pair(oldValue, newValue);
     }
+
+    dump() {
+        return `{changeInfo:${this.changeInfo.dump()}}`
+    }
 }

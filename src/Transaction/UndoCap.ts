@@ -10,4 +10,16 @@ export class UndoCap {
         }
         this.committedObjs.get(target).commit(property, oldValue, newValue);
     }
+
+    recover() {
+        // TODO: recover each target in this.committedObjs with ObjectCommitInfo.
+    }
+
+    dump() {
+        let caption = [];
+        this.committedObjs.forEach((objCommitInfo, target) => {
+            caption.push(`commit object ${target.className} <-> ${objCommitInfo.dump()}`);
+        });
+        return `capture:{${caption.join(',')}}`;
+    }
 }
