@@ -34,7 +34,11 @@ export class TransactionContext {
         }
     }
 
-    onPropertyChanged(className: string, property: string, hash: any, oldValue: any, newValue: any) {
-        this.activeTransaction.onPropertyChanged(className, property, hash, oldValue, newValue); // make sure to crash it if none transaction is active.
+    onPropertyChanged(target: any, property: string, oldValue: any, newValue: any) {
+        this.activeTransaction.onPropertyChanged(target, property, oldValue, newValue); // make sure to crash it if none transaction is active.
+    }
+
+    dump() {
+        return JSON.stringify(this.undolist);
     }
 }

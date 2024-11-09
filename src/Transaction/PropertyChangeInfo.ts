@@ -1,5 +1,8 @@
+import { Pair } from "./Pair";
+
 export class PropertyChangeInfo {
-    className: string;
-    objectId: string;
-    pathName: string;
+    changeInfo: Pair<any, any>; // [old, new]
+    constructor(oldValue: any, newValue: any) {
+        this.changeInfo = new Pair(oldValue, newValue);
+    }
 }

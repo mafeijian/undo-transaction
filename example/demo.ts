@@ -13,4 +13,5 @@ app.listen(port, () => {
   doc.version = 42;
   doc.transactionContext.commitTransaction(doc.transactionContext.activeTransaction);
   console.log(`Doc: ${doc.toJSON()}`);
+  console.log(`${doc.transactionContext.dump()}`);
 });

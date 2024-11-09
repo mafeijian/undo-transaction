@@ -10,6 +10,7 @@ export class Transaction {
     constructor(name: string) {
         this.name = name;
         this.isOpen = true;
+        this.capture = new UndoCap();
     }
 
     commit() {
@@ -23,7 +24,8 @@ export class Transaction {
         }
     }
 
-    onPropertyChanged(className: string, property: string, hash: any, oldValue: any, newValue: any) {
-        console.log(`${className}.${property} ${hash} change from ${oldValue} to ${newValue}`);
+    onPropertyChanged(target: any, property: string, oldValue: any, newValue: any) {
+        console.log(`${target.className}.${property} ${target.hash} change from ${oldValue} to ${newValue}`);
+        this.capture.commit(target, property, oldValue, newValue);
     }
 }
