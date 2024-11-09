@@ -2,9 +2,9 @@
   "name": "doc.demo",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/demo.js",
+  "main": "dist/example/demo.js",
   "scripts": {
-    "dev": "tsc && node --inspect dist/demo.js",
+    "dev": "tsc && node --inspect dist/example/demo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
