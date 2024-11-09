@@ -31,6 +31,7 @@ export class Doc extends SerializableObject{
     }
 
     toJSON() {
+        // not implement yet, makes no sense for now.
         return `${(this as any).className},${(this as any).serializableFields}`;
     }
 }
