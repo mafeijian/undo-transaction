@@ -15,6 +15,14 @@ export class ObjectCommitInfo {
         }
     }
 
+    recover(target: any) {
+        Object.keys(this.hash).forEach(property => {
+            const changeInfo = this.hash[property] as PropertyChangeInfo;
+            const oldValue = changeInfo.changeInfo.first;
+            target[property] = oldValue;
+        });
+    }
+
     dump() {
         let caption = '';
         const keys = Object.keys(this.hash);

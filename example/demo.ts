@@ -21,6 +21,11 @@ app.listen(port, () => {
   doc.archObj1.id = 'arch name pipe';
   doc.archObj1.id = 'arch name cabinet';
   doc.transactionContext.commitTransaction(doc.transactionContext.activeTransaction);
+
+  doc.transactionContext.openTransaction(new Transaction('change arch object id again and again'))
+  doc.archObj1.id = 'arch name door';
+  doc.archObj1.id = 'arch name window';
+  doc.transactionContext.abortTransaction(doc.transactionContext.activeTransaction);
   console.log(`Doc: ${doc.toJSON()}`);
   console.log(`${doc.transactionContext.dump()}`);
 });

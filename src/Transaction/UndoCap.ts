@@ -12,7 +12,7 @@ export class UndoCap {
     }
 
     recover() {
-        // TODO: recover each target in this.committedObjs with ObjectCommitInfo.
+        this.committedObjs.forEach((obj, target) => obj.recover(target));
     }
 
     dump() {
