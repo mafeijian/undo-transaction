@@ -1,6 +1,4 @@
-import { DeclareObject } from "../../src/Transaction/DeclareObject";
-import { DeclareProperty } from "../../src/Transaction/DeclareProperty";
-import { SerializableObject } from "../../src/Transaction/SerializableObject";
+import { DeclareObject, DeclareProperty, SerializableObject } from "../../src/Transaction";
 import { Point2d } from "./Point2d";
 
 @DeclareObject('ArchObject')

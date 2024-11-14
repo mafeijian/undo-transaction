@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import { Doc } from './Business/Doc';
-import { Transaction } from '../src/Transaction/Transaction';
+import { Transaction } from '../src/Transaction';
 
 const app: Application = express();
 const router = express.Router()
