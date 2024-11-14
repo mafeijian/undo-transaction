@@ -1,4 +1,4 @@
-import { Pair } from "./Pair";
+import { Pair } from ".";
 
 export class PropertyChangeInfo {
     changeInfo: Pair<any, any>; // [old, new]
