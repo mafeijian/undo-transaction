@@ -1,6 +1,7 @@
+import { ISerializableObject } from "../ISerializableObject";
 import { TransactionContext } from "./TransactionContext";
 
-export class SerializableObject {
+export class SerializableObject implements ISerializableObject {
     hash: any;
 
     // default consturctor necessary for document loading

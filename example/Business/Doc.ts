@@ -1,9 +1,5 @@
 
-import { DeclareObject } from "../../src/Transaction/DeclareObject";
-import { DeclareProperty } from "../../src/Transaction/DeclareProperty";
-import { SerializableObject } from "../../src/Transaction/SerializableObject";
-import { Transaction } from "../../src/Transaction/Transaction";
-import { TransactionContext } from "../../src/Transaction/TransactionContext";
+import { DeclareObject, DeclareProperty, SerializableObject, Transaction, TransactionContext } from "../../src";
 import { ArchObject } from "./ArchObject";
 
 @DeclareObject('Doc')
